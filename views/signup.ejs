@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/signup.css">
+    <title>Signup Page</title>
+</head>
+<body>
+    <h2>Signup</h2>
+    <% if(locals.error) { %>
+        <p><%= error %></p>
+    <% } %>
+
+    <form action="/auth/register" method="post">
+        <label>email</label>
+        <input type="text" required name="email"/>
+        <label>userName</label>
+        <input type="text" required name="userName"/>
+        <label>passcode</label>
+        <input type="text" required name="passcode"/>
+        <button type="submit">Signup</button>
+    </form>
+</body>
+</html>

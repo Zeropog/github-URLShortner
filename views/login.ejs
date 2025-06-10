@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/login.css">
+    <title>Login Page</title>
+</head>
+<body>
+    <div class="login-container">
+        <h1>Login Page</h1>
+
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+
+        <form action="/auth/login" method="post" class="login-form">
+            <label>Enter your email</label>
+            <input type="text" required name="email" placeholder="Enter email">
+
+            <label>Password</label>
+            <input type="password" required name="passcode" placeholder="Enter password">
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="signup-link">
+            <span>New here?</span>
+            <form action="/home/signup" method="get" style="display: inline;">
+                <button type="submit" class="signup-button">Signup</button>
+            </form>
+        </div>
+    </div>
+</body>
+</html>

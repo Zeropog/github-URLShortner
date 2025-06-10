@@ -1,0 +1,88 @@
+/* General reset and base styles */
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #fafafa;
+    font-family: 'Segoe UI', 'Roboto', 'Helvetica Neue', sans-serif;
+    color: #333;
+    line-height: 1.6;
+}
+
+/* Center the content */
+body > div {
+    max-width: 600px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+/* Headings */
+h2 {
+    text-align: center;
+    color: #222;
+    margin-bottom: 20px;
+}
+
+/* Form labels */
+label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+}
+
+/* Inputs */
+input[type="text"] {
+    width: 100%;
+    padding: 12px 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    font-size: 16px;
+    transition: border-color 0.3s, box-shadow 0.3s;
+}
+
+input[type="text"]:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.2);
+    outline: none;
+}
+
+/* Buttons */
+button {
+    display: inline-block;
+    padding: 12px 20px;
+    font-size: 16px;
+    color: #fff;
+    background-color: #4a90e2;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: background-color 0.3s, transform 0.2s;
+    margin: 10px 5px 0 0;  /* Add margin to separate buttons */
+}
+
+
+button:hover {
+    background-color: #357ab8;
+    transform: translateY(-2px);
+}
+
+button:active {
+    transform: translateY(0);
+}
+
+/* Error message */
+p[style*="color: red"] {
+    text-align: center;
+    font-weight: bold;
+}
+
+/* Simple fade-in animation */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(10px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+

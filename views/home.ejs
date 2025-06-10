@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/home.css">
+    <title>Home</title>
+</head>
+<body>
+    <title>Home Page</title>
+    <h2>URL Shortener</h2>
+
+    <% if (locals.id) { %>
+    <div class="generated-url">
+        <p>Generated URL:</p>
+        <a href="http://localhost:4000/url/<%= id %>" target="_blank">
+            http://localhost:4000/url/<%= id %>
+        </a>
+    </div>
+    <% } %>
+
+    <div>
+        <form action="/url" method="post">
+            <label>Enter your original URL:</label>
+            <input type="text" name="url" placeholder="https://google.com" required>
+            <button type="submit">Generate</button>
+        </form>
+        <form action="/auth/logout" method="post">
+            <button type="submit">Logout</button>
+        </form>
+    </div>
+</body>
+</html>
