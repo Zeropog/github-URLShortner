@@ -8,6 +8,7 @@ import shortIdGen from './routes/url.js';
 import staticRoute from './routes/staticRoute.js';
 import path from 'path';
 
+
 const app=express();
 const port=4000;
 
