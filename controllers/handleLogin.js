@@ -21,9 +21,17 @@ async function handleLogin(req,res) {
         // Generating the sessionId and sending the uid to the user as a response.
         const sessionId= uuidv4();
         auth.setUserCookie(sessionId, userdetails);
-        res.cookie('uid', sessionId);   
+        res.cookie('uid', sessionId);  
+        
+        const payload= {
+            id: userdetails.id,
+            name: userdetails.userName,
+            email: userdetails.email
+        }
+        //console.log(payload);
 
-        const token=jwt.sign({userId: userdetails._id}, process.env.secret_key, {expiresIn: "10m"});
+        const token=jwt.sign(payload, process.env.secret_key, {expiresIn: "10m"});
+        
 
         res.cookie("token", token, {
             httpOnly: true,
