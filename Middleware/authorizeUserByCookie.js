@@ -22,7 +22,7 @@ function restrictedToLogInUserOnly(req, res, next) {
             return res.redirect('/home/login/');
         }
 
-        //console.log(req.body);
+        console.log(req.body);
         next();
     });
 
